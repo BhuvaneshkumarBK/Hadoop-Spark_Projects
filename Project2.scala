@@ -8,7 +8,7 @@ object Project2 {
 
 
     //input Path
-    val input = "/home/bhuvanesh/Projects/Project2/AWS/input/*"
+    val input = "hdfs://localhost:50000/in*"
     //out Path
     val output = ""
     val url=    "jdbc:mysql://localhost:3306/Comply"
