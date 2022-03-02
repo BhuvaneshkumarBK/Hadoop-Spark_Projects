@@ -18,3 +18,6 @@ Project#3
     • Created pipleine single node (local) and moved to data to Aws and perfomed tranfomation to stores in S3
     • Wrote UDF to find pollution rate(level) of the chemicals in atmosphere ( SO2, No2 )
     
+   Youtube Trending:
+   every ten days.. find top 3 rank of trending category...channel tht has most frequent(per month) trending count for 12 month on tht top 3
+    
