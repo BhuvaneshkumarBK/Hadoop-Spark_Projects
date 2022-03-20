@@ -20,4 +20,8 @@ Project#3
     
  Youtube Trending:
    every ten days.. find top 3 rank of trending category...channel that has most frequent(per month) trending count for 12 month on tht top 3
+   
+ Kafka#4
+   Created Producer to fetch data using Twitter api and send as avro serialized Java object which is created using Pojo.
+   Created consumer to consumer data from the topic, deserilized using custom avro serdes then filtered the data by language ('en'), grouped by hashtags  in every conversation(tweet) and counted. This group by data windowed by 30 min, advanced by 1 min and grace for 3 min so that lastest ( last 30 min) trending hashtags for every 1min can be found. Then it sent to another kafka topic, again it's processed to find top 10 trending hashtags using spark streaming api.
     
