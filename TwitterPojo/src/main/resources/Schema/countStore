@@ -1,0 +1,16 @@
+{
+  "name": "countStore",
+  "type": "record",
+  "namespace": "com.acme.avro",
+
+        "fields": [
+          {
+            "name": "tag",
+            "type": "string"
+          },
+          {
+            "name": "count",
+            "type": "long"
+          }
+  ]
+}

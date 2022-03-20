@@ -1,0 +1,224 @@
+{
+  "name": "Twittr",
+  "type": "record",
+  "namespace": "com.acme.avro",
+  "fields": [
+    {
+      "name": "data",
+      "type": {
+        "name": "data",
+        "type": "record",
+        "fields": [
+          {
+            "name": "author_id",
+            "type": "string"
+          },
+          {
+            "name": "context_annotations",
+            "type": {
+              "type": "array",
+              "items": {
+                "name": "context_annotations_record",
+                "type": "record",
+                "fields": [
+                  {
+                    "name": "domain",
+                    "type":  [
+                      "null",{
+                      "name": "domain",
+                      "type": "record",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "type": ["null","string"],
+                          "default": "null"
+                        },
+                        {
+                          "name": "name",
+                          "type":["null", "string"],
+                          "default": "null"
+                        },
+                        {
+                          "name": "description",
+                          "type": ["null","string"],
+                          "default": "null"
+                        }
+                      ]
+                    }]
+                  },
+                  {
+                    "name": "entity",
+                    "type": {
+                      "name": "entity",
+                      "type": "record",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "type": ["null","string"]
+                        },
+                        {
+                          "name": "name",
+                          "type": ["null","string"]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "conversation_id",
+            "type": "string"
+          },
+          {
+            "name": "created_at",
+            "type": "string",
+            "logicalType": "date"
+          },
+          {
+            "name": "entities",
+            "type": {
+              "name": "entities",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "hashtags",
+                  "type": {
+                    "type": "array",
+                    "items": {
+                      "name": "hashtags_record",
+                      "type": "record",
+                      "fields": [
+                        {
+                          "name": "start",
+                          "type":["null", "int"],
+                          "default": "null"
+                        },
+                        {
+                          "name": "end",
+                          "type": ["null","int"],
+                          "default": "null"
+                        },
+                        {
+                          "name": "tag",
+                          "type": ["null","string"],
+                          "default": "null"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "mentions",
+                  "type": {
+                    "type": "array",
+                    "items": {
+                      "name": "mentions_record",
+                      "type": "record",
+                      "fields": [
+                        {
+                          "name": "start",
+                          "type": "int"
+                        },
+                        {
+                          "name": "end",
+                          "type": "int"
+                        },
+                        {
+                          "name": "username",
+                          "type": "string"
+                        },
+                        {
+                          "name": "id",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "geo",
+            "type": {
+              "name": "geo",
+              "type": "record",
+              "fields": []
+            }
+          },
+          {
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "name": "lang",
+            "type": "string"
+          },
+          {
+            "name": "possibly_sensitive",
+            "type": "boolean"
+          },
+          {
+            "name": "public_metrics",
+            "type": {
+              "name": "public_metrics",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "retweet_count",
+                  "type": "int"
+                },
+                {
+                  "name": "reply_count",
+                  "type": "int"
+                },
+                {
+                  "name": "like_count",
+                  "type": "int"
+                },
+                {
+                  "name": "quote_count",
+                  "type": "int"
+                }
+              ]
+            }
+          },
+          {
+            "name": "referenced_tweets",
+            "type": {
+              "type": "array",
+              "items": {
+                "name": "referenced_tweets_record",
+                "type": "record",
+                "fields": [
+                  {
+                    "name": "type",
+                    "type": "string"
+                  },
+                  {
+                    "name": "id",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "reply_settings",
+            "type": "string"
+          },
+          {
+            "name": "source",
+            "type": "string"
+          },
+          {
+            "name": "text",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
